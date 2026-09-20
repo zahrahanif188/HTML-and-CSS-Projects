@@ -1,0 +1,187 @@
+/* Color Palette Variables */
+:root {
+  --bg-dark: #07090e;
+  --text-main: #f3f4f6;
+  --color-cyan: #00f0ff;
+  --color-purple: #7000ff;
+  --color-pink: #ff007f;
+}
+
+/* Glassmorphism Card Style */
+.glass-card {
+  background: rgba(18, 24, 38, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Gradient Heading Text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-purple) 50%, var(--color-pink) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================================
+   ANIMATED BACKGROUND VIDEO & ORB EFFECTS
+   ========================================= */
+
+/* Glowing Pulsing Orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  animation: floatOrb 12s infinite ease-in-out alternate;
+}
+
+.orb-1 {
+  top: -10%;
+  left: 10%;
+  width: 450px;
+  height: 450px;
+  background: rgba(0, 240, 255, 0.18);
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  bottom: 10%;
+  right: 5%;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 0, 127, 0.15);
+  animation-delay: -4s;
+}
+
+.orb-3 {
+  top: 45%;
+  left: 40%;
+  width: 350px;
+  height: 350px;
+  background: rgba(112, 0, 255, 0.15);
+  animation-delay: -8s;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, -40px) scale(1.15); }
+  100% { transform: translate(-40px, 50px) scale(0.9); }
+}
+
+/* Cyberpunk Horizontal Video Scanlines */
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  opacity: 0.35;
+}
+
+/* Floating Code Background Elements */
+.floating-code {
+  position: absolute;
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  color: rgba(0, 240, 255, 0.25);
+  white-space: nowrap;
+  animation: floatCode 16s infinite linear;
+}
+
+.code-1 { top: 15%; left: 5%; animation-duration: 22s; }
+.code-2 { top: 40%; right: 8%; animation-duration: 18s; color: rgba(255, 0, 127, 0.2); }
+.code-3 { top: 70%; left: 12%; animation-duration: 25s; color: rgba(112, 0, 255, 0.25); }
+.code-4 { top: 85%; right: 15%; animation-duration: 20s; }
+
+@keyframes floatCode {
+  0% { transform: translateY(0px) rotate(0deg); opacity: 0.1; }
+  50% { transform: translateY(-40px) rotate(2deg); opacity: 0.35; }
+  100% { transform: translateY(0px) rotate(0deg); opacity: 0.1; }
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--color-pink) 0%, var(--color-purple) 100%);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(255, 0, 127, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(255, 0, 127, 0.4);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-hire {
+  background: linear-gradient(135deg, var(--color-cyan) 0%, #00a2ff 100%);
+  color: #07090e;
+  font-weight: 800;
+  font-size: 0.75rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.btn-hire:hover {
+  transform: scale(1.05);
+}
+
+/* Badge Tags */
+.badge-tag {
+  font-size: 0.7rem;
+  font-family: 'Fira Code', monospace;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #9ca3af;
+}
+
+/* Form Inputs */
+.input-field {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 0.6rem 1rem;
+  color: #ffffff;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input-field:focus {
+  border-color: var(--color-cyan);
+}
