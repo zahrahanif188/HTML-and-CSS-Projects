@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Passion+One&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <title>Academy Cinemas</title>
+
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CUSTOM STYLES -->
+    <style>
+      :root {
+        --main-color: rgb(126, 133, 130);
+        --main-color-accent: rgb(237, 192, 3);
+        --main-color-transparent: rgba(126, 133, 130, 0.8);
+        --secondary-color: rgba(128, 0, 0, 0.9);
+        --accent-color: rgb(36, 36, 36);
+        --accent-text-color: rgb(255, 255, 255);
+        --main-font-family: 'Passion One', cursive;
+      }
+
+      body {
+        background-image: url('images/theater-curtains.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-color: #500;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      /* NAVBAR */
+      .navbar {
+        background-color: var(--secondary-color);
+        border-bottom: 4px solid #400;
+      }
+
+      .navbar-brand {
+        color: var(--main-color-accent);
+        font-family: var(--main-font-family);
+        font-size: 2.2rem;
+      }
+
+      .nav-link {
+        color: var(--main-color-accent);
+        font-family: var(--main-font-family);
+        font-size: 1.8rem;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+
+      .nav-link:hover, .navbar-brand:hover {
+        color: #fff;
+      }
+
+      /* HERO SECTION */
+      .hero-section {
+        min-height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero-title {
+        font-family: 'Pacifico', cursive;
+        color: var(--main-color-accent);
+        font-size: 6rem;
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+        line-height: 1.1;
+      }
+
+      /* SECTION HEADINGS */
+      .section-heading {
+        font-family: var(--main-font-family);
+        color: var(--main-color-accent);
+        font-size: 4rem;
+        letter-spacing: 1px;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+      }
+
+      /* MOVIE CARDS */
+      .movie-card {
+        background-color: rgba(255, 255, 255, 0.92);
+        border-radius: 4px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        max-width: 900px;
+      }
+
+      .movie-title {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        font-size: 2rem;
+        color: #111;
+      }
+
+      .showtime-badge {
+        background-color: #a0a6a3;
+        color: #111;
+        font-weight: 700;
+        font-size: 0.8rem;
+        padding: 8px 12px;
+        border-radius: 12px;
+      }
+
+      /* TICKETS SECTION */
+      .ticket-box {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 4px;
+        padding: 2rem;
+        min-height: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .btn-yellow {
+        background-color: var(--main-color-accent);
+        color: #000;
+        font-weight: 700;
+        padding: 10px 30px;
+        border-radius: 20px;
+        border: none;
+      }
+
+      .btn-yellow:hover {
+        background-color: #d4a902;
+      }
+
+      /* CONTACT FORM */
+      .contact-input {
+        background-color: rgba(255, 255, 255, 0.9);
+        border: none;
+        border-radius: 3px;
+        padding: 12px;
+      }
+
+      /* FOOTER NAVIGATION */
+      .footer-nav {
+        font-family: var(--main-font-family);
+        font-size: 1.5rem;
+      }
+
+      .footer-nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+      }
+
+      .footer-brand {
+        font-family: 'Pacifico', cursive;
+        color: var(--main-color-accent);
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand" href="#">Academy Cinemas</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                Now Playing
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#ben-hur">Ben-Hur</a></li>
+                <li><a class="dropdown-item" href="#day-earth-stood-still">The Day the Earth Stood Still</a></li>
+                <li><a class="dropdown-item" href="#vertigo">Vertigo</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#tickets">Tickets</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section text-center">
+      <h1 class="hero-title">Academy<br>Cinemas</h1>
+    </section>
+
+    <!-- NOW PLAYING SECTION -->
+    <section id="now-playing" class="container my-5">
+      <h2 class="text-center section-heading mb-5">Now Playing</h2>
+
+      <!-- MOVIE 1: BEN-HUR (Poster Left) -->
+      <div id="ben-hur" class="row movie-card mx-auto mb-5 overflow-hidden align-items-center">
+        <div class="col-md-6 p-0 text-center">
+          <img src="images/ben-hur.jpg" alt="Ben-Hur Poster" class="img-fluid w-100">
+        </div>
+        <div class="col-md-6 p-4">
+          <h3 class="movie-title">Ben-Hur</h3>
+          <p class="text-muted small">After a Jewish prince is betrayed and sent into slavery by a Roman friend in 1st-century Jerusalem, he regains his freedom and comes back for revenge.</p>
+          <p class="small mb-1"><strong>Director:</strong> William Wyler</p>
+          <p class="small"><strong>Starring:</strong> Charlton Heston | Jack Hawkins | Stephen Boyd</p>
+          <h5 class="fst-italic mt-4">Show Times</h5>
+          <div class="d-flex flex-wrap gap-2 mt-2">
+            <span class="badge showtime-badge">10:00 AM</span>
+            <span class="badge showtime-badge">11:30 AM</span>
+            <span class="badge showtime-badge">1:10 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOVIE 2: THE DAY THE EARTH STOOD STILL (Poster Right) -->
+      <div id="day-earth-stood-still" class="row movie-card mx-auto mb-5 overflow-hidden align-items-center">
+        <div class="col-md-6 p-4">
+          <h3 class="movie-title">The Day the Earth Stood Still</h3>
+          <p class="text-muted small">An alien lands in Washington, D.C. and tells the people of Earth that they must live peacefully or be destroyed as a danger to other planets.</p>
+          <p class="small mb-1"><strong>Director:</strong> Robert Wise</p>
+          <p class="small"><strong>Starring:</strong> Michael Rennie | Patricia Neal | Hugh Marlowe</p>
+          <h5 class="fst-italic mt-4">Show Times</h5>
+          <div class="d-flex flex-wrap gap-2 mt-2">
+            <span class="badge showtime-badge">10:00 AM</span>
+            <span class="badge showtime-badge">11:30 AM</span>
+            <span class="badge showtime-badge">1:10 PM</span>
+            <span class="badge showtime-badge">2:30 PM</span>
+            <span class="badge showtime-badge">4:50 PM</span>
+            <span class="badge showtime-badge">8:00 PM</span>
+          </div>
+        </div>
+        <div class="col-md-6 p-0 text-center">
+          <img src="images/earth-stood-still.jpg" alt="The Day the Earth Stood Still Poster" class="img-fluid w-100">
+        </div>
+      </div>
+
+      <!-- MOVIE 3: VERTIGO (Poster Left) -->
+      <div id="vertigo" class="row movie-card mx-auto mb-5 overflow-hidden align-items-center">
+        <div class="col-md-6 p-0 text-center">
+          <img src="images/vertigo.jpg" alt="Vertigo Poster" class="img-fluid w-100">
+        </div>
+        <div class="col-md-6 p-4">
+          <h3 class="movie-title">Vertigo</h3>
+          <p class="text-muted small">A former San Francisco police detective juggles wrestling with his personal demons and becoming obsessed with the hauntingly beautiful woman he has been hired to trail, who may be deeply disturbed.</p>
+          <p class="small mb-1"><strong>Director:</strong> Alfred Hitchcock</p>
+          <p class="small"><strong>Starring:</strong> James Stewart | Kim Novak | Barbara Bel Geddes</p>
+          <h5 class="fst-italic mt-4">Show Times</h5>
+          <div class="d-flex flex-wrap gap-2 mt-2">
+            <span class="badge showtime-badge">10:00 AM</span>
+            <span class="badge showtime-badge">11:30 AM</span>
+            <span class="badge showtime-badge">1:10 PM</span>
+            <span class="badge showtime-badge">2:30 PM</span>
+            <span class="badge showtime-badge">4:50 PM</span>
+            <span class="badge showtime-badge">8:00 PM</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TICKETS SECTION -->
+    <section id="tickets" class="container my-5 py-4">
+      <h2 class="text-center section-heading mb-4">Tickets</h2>
+      <form>
+        <div class="row g-4 text-center">
+          <div class="col-md-4">
+            <div class="ticket-box">
+              <label class="form-label fw-bold mb-3">Please Select a Movie</label>
+              <select class="form-select">
+                <option selected>Select Movie</option>
+                <option value="1">Ben-Hur</option>
+                <option value="2">The Day the Earth Stood Still</option>
+                <option value="3">Vertigo</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ticket-box">
+              <label class="form-label fw-bold mb-3">Please select a show time</label>
+              <select class="form-select">
+                <option selected>Select Time</option>
+                <option value="1">10:00 AM</option>
+                <option value="2">11:30 AM</option>
+                <option value="3">1:10 PM</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ticket-box">
+              <label class="form-label fw-bold mb-3">Please select number of tickets</label>
+              <input type="number" class="form-control text-center mx-auto" value="1" style="max-width: 100px;">
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-yellow">Buy Tickets</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="container my-5 py-4">
+      <h2 class="text-center section-heading mb-4">Contact Us!</h2>
+      <form style="max-width: 800px;" class="mx-auto">
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <input type="text" class="form-control contact-input" placeholder="First name">
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control contact-input" placeholder="Last name">
+          </div>
+        </div>
+        <div class="mb-3">
+          <input type="email" class="form-control contact-input" placeholder="Email">
+        </div>
+        <div class="mb-3">
+          <textarea class="form-control contact-input" rows="3" placeholder="Type your message here..."></textarea>
+        </div>
+        <div class="text-end">
+          <button type="submit" class="btn btn-yellow">Submit</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-4">
+      <div class="container">
+        <div class="row align-items-center my-3">
+          <div class="col-md-4 text-start">
+            <span class="text-white">&copy; Academy Cinemas</span>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="footer-brand">Academy<br>Cinemas</div>
+          </div>
+          <div class="col-md-4 text-end footer-nav">
+            <a href="#now-playing">Now Playing</a>
+            <a href="#tickets">Tickets</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+        <small class="text-white-50">&copy; Prosper Consulting Inc., The Tech Academy</small>
+      </div>
+    </footer>
+
+    <!-- BOOTSTRAP JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

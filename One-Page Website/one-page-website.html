@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Page Website</title>
+    <style>
+    /* Lightbox Styles */
+    .row > .column {
+      padding: 0 8px;
+    }
+
+    .column {
+      float: left;
+      width: 50%;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: black;
+    }
+
+    .modal-content {
+      position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      width: 80%;
+      max-width: 1200px;
+    }
+
+    .close {
+      color: white;
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      font-size: 35px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #999;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  </style>
+</head>
+<body>
+
+    <!-- 6. Navigation with HTML Bookmarks -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <!-- 1. Home Page Section -->
+    <section id="home">
+        <h1>Welcome to My One-Page Website</h1>
+        <p>This is the home section of the website. It contains introductory information, headings, and paragraphs outlining the purpose of this project.</p>
+    </section>
+
+    <hr>
+
+    <!-- 2. Section with Pictures -->
+    <section id="gallery">
+        <h2>Photo Gallery</h2>
+        <p>Explore some of our featured images below:</p>
+       <img src="https://via.placeholder.com/300x200" onclick="openModal();currentSlide(1)" alt="Placeholder Image 1">
+<img src="https://via.placeholder.com/300x200" onclick="openModal();currentSlide(2)" alt="Placeholder Image 2">
+    </section>
+
+    <hr>
+
+    <!-- 4. Section with Video(s) -->
+    <section id="videos">
+        <h2>Featured Video</h2>
+        <p>Watch our embedded video content below:</p>
+        <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            title="Embedded Video" 
+            frameborder="0" 
+            allowfullscreen>
+        </iframe>
+    </section>
+
+    <hr>
+
+    <!-- 3. Contact Form -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="#" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <hr>
+
+    <!-- 5. Footer -->
+    <footer>
+        <p>&copy; 2026 My One-Page Website. All rights reserved.</p>
+    </footer>
+<!-- Modal / Lightbox Gallery -->
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 2</div>
+      <img src="https://via.placeholder.com/600x400" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 2</div>
+      <img src="https://via.placeholder.com/600x400" style="width:100%">
+    </div>
+
+    <!-- Next / Previous Controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <!-- Caption Container -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+  </div>
+</div>
+
+<!-- Link JavaScript File -->
+<script src="JS/one_page_website.js" defer></script>
+</body>
+</html>
